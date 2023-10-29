@@ -44,8 +44,8 @@ a:hover {
 .song {
 	/* display: none; */
 	position: absolute;
-
-	left: 0px;
+	top: 100%;
+	left: 85%;
 
 	z-index: 2;
 }
