@@ -1,19 +1,30 @@
 @import url(https://fonts.googleapis.com/css?family=Covered+By+Your+Grace);
 
+
+#timer {
+	position: absolute;
+	top: 4500px;
+	left: 500px;
+	height: 300px;
+	width: 1000px;
+	z-index: 3;
+  text-wrap: nowrap;
+}
+
 #days {
-  font-size: 200px;
+  font-size: 300px;
   color: #db4844;
 }
 #hours {
-  font-size: 150px;
+  font-size: 200px;
   color: #f07c22;
 }
 #minutes {
-  font-size: 100px;
+  font-size: 150px;
   color: #f6da74;
 }
 #seconds {
-  font-size: 50px;
+  font-size: 100px;
   color: #abcd58;
 }
 

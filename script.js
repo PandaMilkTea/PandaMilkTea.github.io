@@ -15,28 +15,26 @@ class Birthday {
   }
   
   resize() {
-    // self.canvas.width = 60;
-		// self.canvas.height = 4000;	
-
     canvas.width = window.innerWidth / 2 | 0
     canvas.height = window.innerHeight / 2 | 0
 
-    this.width = canvas.width
-    // this.width = canvas.width = window.innerWidth
+    this.width = canvas.width = window.innerWidth
+    // this.width = canvas.width = window.innerWidth - 20
     let center = this.width / 2 | 0
     this.spawnA = center - center / 4 | 0
     this.spawnB = center + center / 4 | 0
     
-    this.height = canvas.height
-    // this.height = canvas.height = window.innerHeight
+    this.height = canvas.height = window.innerHeight
     this.spawnC = this.height * .1
     this.spawnD = this.height * .5
     
   }
   
   onClick(evt) {
-     let x = evt.clientX || evt.touches && evt.touches[0].pageX
-     let y = evt.clientY || evt.touches && evt.touches[0].pageY
+    //  let x = evt.clientX || evt.touches && evt.touches[0].pageX
+    // let y = evt.clientY || evt.touches && evt.touches[0].pageY
+     let x = evt.clientX || evt.touches && evt.touches[0].canvas.x
+     let y = evt.clientY || evt.touches && evt.touches[0].canvas.y
      
      let count = random(3,5)
      for(let i = 0; i < count; i++) this.fireworks.push(new Firework(
@@ -54,7 +52,8 @@ class Birthday {
   update(delta) {
     // ctx.globalCompositeOperation = 'hard-light'
 		ctx.globalCompositeOperation = 'destination-out';
-    ctx.fillStyle = `rgba(20,20,20,${ 7 * delta })`
+    // ctx.fillStyle = `rgba(20,20,20,${ 7 * delta })`
+    ctx.fillStyle = `rgba(0,0,0,${ 7 * delta })`
     ctx.fillRect(0, 0, this.width, this.height)
 
     ctx.globalCompositeOperation = 'lighter'
@@ -74,6 +73,7 @@ class Birthday {
     }
 
     // remove the dead fireworks
+    // if (this.fireworks.length > 1000) this.fireworks = this.fireworks.filter(firework => !firework.dead)
     if (this.fireworks.length > 1000) this.fireworks = this.fireworks.filter(firework => !firework.dead)
 
   }

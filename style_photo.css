@@ -1,7 +1,8 @@
-body{
+/* body{
   font-family: Homemade Apple;
   background-color:white;
-}
+} */
+
 .back-frame{
   background-color:pink;
   width:400px;
@@ -11,6 +12,7 @@ body{
   margin-right:200px;
   display:inline-block;
   position:relative;
+  z-index: 3;
 }
 .pin{
   background-color:#CD853F;
@@ -23,24 +25,29 @@ body{
   z-index:99;
   position:absolute;
 }
+
 .photo-frame{
   position:absolute;
-  top:100px;
   display:inline-block;
   transform: rotate(5deg);
-  background-color:white;
-  height:379px;
-  width:316px;
-  top:60px;
+  background-color:rgb(130, 227, 244);
+  height:700px;
+  width:580px;
+  top:1100px;
+  left: 1050px;
   margin-left:50px;
   margin-right:50px;
   box-shadow: 3px 3px 3px 2px gray;
   text-align:center;
+  z-index: 3;
 }
 .description{
+  position: relative;
   transform: rotate(-3deg);
-  font-size:26px;
+  font-size:70px;
   margin-top:10px;
+  left: 40px;
+  top: -110px;
 }
 
 .photo-frame:hover{
@@ -55,21 +62,29 @@ body{
   background-size:cover;
   position: relative;
   background-position: center center;
-  margin-top:18px;
-  margin-left:18px;
-  margin-right:18px;
+  margin-top:1px;
+  margin-left:1px;
+  margin-right:1px;
 }
 .layer {
-    background-color: rgba(248, 247, 216, 0.9);
-    position: absolute;
+    background-color: rgba(247, 245, 191, 0.9);
+    position: relative;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    left: -110px;
+    width: 500px;
+    height: 630px;
     transition: background-color .8s;
   
 }
 
+.pic {
+  position: relative;
+  background-image: url('./images/20210825_223716.jpg');
+  background-size: 100% 100%;
+  top: 0;
+  width: 450px;
+  height: 600px;
+}
 
 .photo-frame:hover .layer{
     background-color: rgba(248, 247, 216, 0);
